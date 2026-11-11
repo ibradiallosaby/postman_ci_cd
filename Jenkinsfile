@@ -19,6 +19,13 @@ pipeline {
  
             }
         }
+        stage('Generer le rapport') {
+            steps {
+              
+              sh 'newman run Collection/Postman_CI_CD.postman_collection.json -e Environnement/preprod.postman_environment.json -r htmlextra'
+ 
+            }
+        }
            
          
     }
