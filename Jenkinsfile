@@ -10,6 +10,8 @@ pipeline {
          stage('Check version nodejs') {
             steps {
                 sh 'newman --version'
+                sh 'npm --version'
+                sh 'npm install -g newman-reporter-htmlextra'
             }
         }
         stage('Lancer le test') {
